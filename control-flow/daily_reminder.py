@@ -21,4 +21,4 @@ elif time_bound == "no":
 else:
     message += ". Enter a valid time bound."
 
-print(f"{message}")
+print(f" {message}")
