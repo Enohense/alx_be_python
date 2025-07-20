@@ -8,15 +8,17 @@ match priority:
     case "high":
         message = f"Reminder: '{task}' is a high priority task"
     case "medium":
-        message = f"Reminder: '{task}' is a medium priority task"
+        message = f"Note: '{task}' is a medium priority task"
     case "low":
         message = f"Note: '{task}' is a low priority task"
     case _:
-        message = f"Note: '{task}' has an unspecified priority"
+        message = f"'{task}' has an unspecified priority"
 
 if time_bound == "yes":
     message += " that requires immediate attention today!"
+elif time_bound == "no":
+    message += " Consider completing it when you have free time."
 else:
-    message += ". Consider completing it when you have free time."
+    message += ". Enter a valid time bound."
 
-print("\n" + message)
+print(f"{message}")
