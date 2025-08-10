@@ -1,5 +1,3 @@
-# library_system.py
-
 __all__ = ["Book", "EBook", "PrintBook", "Library"]
 
 class Book:

@@ -1,36 +1,23 @@
 import math
-from typing import Protocol
-
 
 class Shape:
-    """Base class for shapes demonstrating polymorphism via method overriding."""
-
-    def area(self) -> float:
-        """Return the area of the shape.
-
-        Must be overridden by subclasses.
+    def area(self):
+        """Compute the area of the shape.
+        Subclasses must override this method.
         """
-        raise NotImplementedError("Subclasses must implement area().")
-
+        raise NotImplementedError("Subclasses must implement the area() method.")
 
 class Rectangle(Shape):
-    """Rectangle shape with length and width."""
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-    def __init__(self, length: float, width: float) -> None:
-        self.length = float(length)
-        self.width = float(width)
-
-    def area(self) -> float:
-        """Area = length × width."""
+    def area(self):
         return self.length * self.width
 
-
 class Circle(Shape):
-    """Circle shape with radius."""
+    def __init__(self, radius):
+        self.radius = radius
 
-    def __init__(self, radius: float) -> None:
-        self.radius = float(radius)
-
-    def area(self) -> float:
-        """Area = π × r²."""
+    def area(self):
         return math.pi * (self.radius ** 2)
