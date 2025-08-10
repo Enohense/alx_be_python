@@ -1,39 +1,14 @@
-__all__ = ["Book", "EBook", "PrintBook", "Library"]
+class Calculator:
+    # Class attribute
+    calculation_type = "Arithmetic Operations"
 
-class Book:
-    def __init__(self, title: str, author: str):
-        self.title = title
-        self.author = author
+    @staticmethod
+    def add(a, b):
+        """Return the sum of two numbers."""
+        return a + b
 
-    def __str__(self):
-        return f"Book: {self.title} by {self.author}"
-
-
-class EBook(Book):
-    def __init__(self, title: str, author: str, file_size: int):
-        super().__init__(title, author)
-        self.file_size = file_size
-
-    def __str__(self):
-        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
-
-
-class PrintBook(Book):
-    def __init__(self, title: str, author: str, page_count: int):
-        super().__init__(title, author)
-        self.page_count = page_count
-
-    def __str__(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
-
-
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def add_book(self, book: Book):
-        self.books.append(book)
-
-    def list_books(self):
-        for book in self.books:
-            print(book)
+    @classmethod
+    def multiply(cls, a, b):
+        """Return the product of two numbers and print the calculation type."""
+        print(f"Calculation type: {cls.calculation_type}")
+        return a * b

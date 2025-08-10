@@ -1,4 +1,3 @@
-# oop/polymorphism_demo.py
 import math
 from typing import Protocol
 
